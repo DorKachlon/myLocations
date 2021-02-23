@@ -24,3 +24,51 @@
     margin: 0px 10px;
   }
   
+  .actions-button{
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .actions-button {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .actions-button svg{
+    color:white;
+    transition: 1.5s;
+  }
+  .actions-button > .edit-button:hover  svg{
+    color:rgb(159, 193, 255);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+  
+  .actions-button > .delete-button:hover  svg{
+    color:rgb(255, 160, 160);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+
+  .actions-button > .add-button:hover  svg{
+    color:rgb(175, 255, 175);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+
+  @keyframes dance{
+    0%{
+      transform: rotate(0deg);
+    }
+    25%{
+      transform: rotate(8deg);
+    }    
+    50%{
+      transform: rotate(0deg);
+    }    
+    75%{
+      transform: rotate(-8deg);
+    }
+    100%{
+      transform: rotate(0deg);
+    }
+  }

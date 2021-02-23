@@ -4,8 +4,8 @@ import Tab from "@material-ui/core/Tab";
 import Tooltip from "@material-ui/core/Tooltip";
 import { makeStyles } from "@material-ui/core";
 
-import QueueIcon from "@material-ui/icons/Queue";
 import MapIcon from "@material-ui/icons/Map";
+import ListIcon from "@material-ui/icons/List";
 
 import { Link } from "react-router-dom";
 import "./style.css";
@@ -17,7 +17,7 @@ const useStyle = makeStyles({
   },
 });
 const links = [
-  { title: "Category", to: "/categories", component: <QueueIcon /> },
+  { title: "Category", to: "/categories", component: <ListIcon /> },
   { title: "Location", to: "/locations", component: <MapIcon /> },
 ];
 
