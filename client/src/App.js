@@ -33,8 +33,8 @@ function App() {
           <Switch>
             <Route exact path="/categories" component={Categories} />
             <Route exact path="/locations" component={Locations} />
-            <Route exact path="/add-Category" component={AddCategory} />
-            <Route exact path="/add-Location" component={AddLocation} />
+            <Route exact path="/add-category" component={AddCategory} />
+            <Route exact path="/add-location" component={AddLocation} />
           </Switch>
         </Router>
       </div>

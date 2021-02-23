@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Clock from "./clock";
 import ExploreIcon from "@material-ui/icons/Explore";
 import { Link } from "react-router-dom";
@@ -6,26 +6,80 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import { useLocation } from "react-router-dom";
+
 import "./style.css";
 
 export default function Header() {
+  const [locationsOrCategories, setLocationsOrCategories] = useState();
+  const [title, setTitle] = useState();
+  const [showButtons, setShowButtons] = useState();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/add-location":
+        setLocationsOrCategories("locations");
+        setTitle("Add a new Location");
+        setShowButtons(false);
+        break;
+      case "/locations":
+        setLocationsOrCategories("locations");
+        setTitle("Locations");
+        setShowButtons(true);
+        break;
+      case "/add-category":
+        setLocationsOrCategories("categories");
+        setTitle("Add a new Category");
+        setShowButtons(false);
+        break;
+      case "/categories":
+        setLocationsOrCategories("categories");
+        setTitle("Categories");
+        setShowButtons(true);
+        break;
+      default:
+        setLocationsOrCategories("");
+        break;
+    }
+  }, [location]);
+
   return (
     <div className="header">
       <div className="icon-web">
         <ExploreIcon />
       </div>
-      <h1>Dashboard</h1>
+      <h1>{title}</h1>
       <Clock />
       <div className="actions-button">
-        <IconButton className="edit-button">
-          <EditIcon />
-        </IconButton>
-        <IconButton className="delete-button">
-          <DeleteIcon />
-        </IconButton>
-        <IconButton className="add-button" component={Link} to="/add-categories">
-          <AddCircleOutlineIcon />
-        </IconButton>
+        {showButtons && (
+          <>
+            <Tooltip title="Edit" placement="bottom">
+              <IconButton className="edit-button">
+                <EditIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Delete" placement="bottom">
+              <IconButton className="delete-button">
+                <DeleteIcon />
+              </IconButton>
+            </Tooltip>
+          </>
+        )}
+        <Tooltip
+          title={locationsOrCategories === "categories" ? "/Add Category" : "Add Location"}
+          placement="bottom"
+        >
+          <IconButton
+            className="add-button"
+            component={Link}
+            to={locationsOrCategories === "categories" ? "/add-category" : "/add-location"}
+          >
+            <AddCircleOutlineIcon />
+          </IconButton>
+        </Tooltip>
       </div>
     </div>
   );
