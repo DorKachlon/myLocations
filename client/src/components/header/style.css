@@ -1,0 +1,26 @@
+.icon-web svg {
+    font-size: 40px;
+    margin: 0px 35px;
+  }
+  .header {
+    background-color: var(--grey1);
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+    height: 50px;
+  }
+  .user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .user > div {
+    width: 30px;
+    height: 30px;
+  }
+  .user > h2 {
+    margin: 0px 10px;
+  }
+  
