@@ -4,14 +4,9 @@ import Tab from "@material-ui/core/Tab";
 import Tooltip from "@material-ui/core/Tooltip";
 import { makeStyles } from "@material-ui/core";
 
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import ReorderIcon from "@material-ui/icons/Reorder";
-import SyncAltIcon from "@material-ui/icons/SyncAlt";
-import PersonIcon from "@material-ui/icons/Person";
-import PeopleIcon from "@material-ui/icons/People";
-
 import QueueIcon from "@material-ui/icons/Queue";
 import MapIcon from "@material-ui/icons/Map";
+
 import { Link } from "react-router-dom";
 import "./style.css";
 
