@@ -27,7 +27,6 @@ const outerTheme = createMuiTheme({
 });
 
 function App() {
-  const [menuValue, setMenuValue] = useState(0);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchLocations());
@@ -39,7 +38,7 @@ function App() {
       <div className="app-layout">
         <Router>
           <Header />
-          <Menu menuValue={menuValue} setMenuValue={setMenuValue} />
+          <Menu />
           <Switch>
             <Route exact path="/categories" component={Categories} />
             <Route exact path="/locations" component={Locations} />
