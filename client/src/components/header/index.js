@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeCategory } from "../../actions/categories";
 import { removeLocation } from "../../actions/locations";
-
+import MyModal from "../modalEdit";
 import "./style.css";
 
 export default function Header() {
@@ -102,6 +102,7 @@ export default function Header() {
           </Tooltip>
         )}
       </div>
+      <MyModal open={openModal} setOpen={setOpenModal} data={selectedItem[0]} />
     </div>
   );
 }

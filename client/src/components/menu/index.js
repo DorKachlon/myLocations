@@ -23,7 +23,7 @@ const links = [
 ];
 
 export default function Menu() {
-  const [menuValue, setMenuValue] = useState();
+  const [menuValue, setMenuValue] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
