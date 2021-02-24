@@ -42,7 +42,7 @@ export default function AddCategory() {
           </Button>
           {error && (
             <div className="error-message">
-              <ErrorOutlineOutlinedIcon style={{ color: "white" }} />
+              <ErrorOutlineOutlinedIcon style={{ color: "var(--light)" }} />
               <span>{error}</span>
             </div>
           )}

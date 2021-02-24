@@ -6,7 +6,7 @@
     background-color: var(--grey1);
     display: flex;
     align-items: center;
-    color: white;
+    color: var(--light);
     font-size: 10px;
     height: 50px;
   }
@@ -34,7 +34,7 @@
   }
 
   .actions-button svg{
-    color:white;
+    color:var(--light);
     transition: 1.5s;
   }
   .actions-button > .edit-button:hover  svg{

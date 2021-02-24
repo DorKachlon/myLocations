@@ -11,17 +11,17 @@
 
 .title{
     text-align: center;
-    color: white;
+    color: var(--light);
 }
 
 /* Common input */
 .common-input{
     background: transparent;
-    border: 1px solid white;
+    border: 1px solid var(--light);
     border-radius: 2px;
     padding: 10px;
     transition: 0.5s;
-    color: white;
+    color: var(--light);
 
 }
 .common-input:hover{
@@ -33,7 +33,7 @@
     color: black;
 }
 .common-input:focus{
-    background: white;
+    background: var(--light);
     color: black;
 }
 /* Error */
