@@ -17,8 +17,10 @@ export default function LocationCard({ location, selectedItemBool }) {
           coordinates: {location.coordinatesLng} | {location.coordinatesLat}
         </div>
         <div className="location-category-container">
-          {location.category.map((singleCategories) => (
-            <div className="location-category">{singleCategories}</div>
+          {location.category.map((singleCategories, i) => (
+            <div key={i} className="location-category">
+              {singleCategories}
+            </div>
           ))}
         </div>
       </div>
