@@ -12,7 +12,8 @@ import locationValidation from "../../validation/location";
 export default function AddLocations() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [coordinates, setCoordinates] = useState({});
+  const [coordinatesLng, setCoordinatesLng] = useState("");
+  const [coordinatesLat, setCoordinatesLat] = useState("");
   const [category, setCategory] = useState();
   const [error, setError] = useState("");
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function AddLocations() {
       id: Date.now().toString(),
       name,
       address,
-      coordinates,
+      coordinates: { lng: coordinatesLng, lat: coordinatesLat },
       category: categoryArr,
     };
     try {
@@ -67,25 +68,17 @@ export default function AddLocations() {
           <div className="add-location-coordinates">
             <input
               className="common-input"
-              value={coordinates?.lng}
+              value={coordinatesLng}
               placeholder="Coordinates lng"
               variant="outlined"
-              onChange={(e) =>
-                setCoordinates((prev) => {
-                  return { ...prev, lng: e.currentTarget.value };
-                })
-              }
+              onChange={(e) => setCoordinatesLng(e.currentTarget.value)}
             />
             <input
               className="common-input"
-              value={coordinates?.lat}
+              value={coordinatesLat}
               placeholder="Coordinates lat"
               variant="outlined"
-              onChange={(e) =>
-                setCoordinates((prev) => {
-                  return { ...prev, lat: e.currentTarget.value };
-                })
-              }
+              onChange={(e) => setCoordinatesLat(e.currentTarget.value)}
             />
           </div>
           <Select isMulti value={category} onChange={(e) => setCategory(e)} options={options} />
