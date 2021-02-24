@@ -40,14 +40,12 @@ export default function AddCategory() {
       <div className="page page-add-category">
         <form className="add-category-form" onSubmit={(e) => submitHandler(e)}>
           <h2 className="title">Here you can add a new Category</h2>
-          {/* <FormControl> */}
           <input
             className="common-input"
             value={name}
             placeholder="Enter a new Category"
             onChange={(e) => setName(e.currentTarget.value)}
           />
-          {/* </FormControl> */}
           <Button variant="contained" type="submit">
             Add category
           </Button>
