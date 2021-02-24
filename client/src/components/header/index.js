@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeCategory } from "../../actions/categories";
+import { removeLocation } from "../../actions/locations";
 
 import "./style.css";
 
@@ -54,7 +55,11 @@ export default function Header() {
   }, [location]);
 
   const deleteHandler = () => {
-    dispatch(removeCategory(selectedItem[0]));
+    if (selectedItem[0].type === "location") {
+      dispatch(removeLocation(selectedItem[0]));
+    } else {
+      dispatch(removeCategory(selectedItem[0]));
+    }
   };
   const editHandler = () => {
     setOpenModal(true);
