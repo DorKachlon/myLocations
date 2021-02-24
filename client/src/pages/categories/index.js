@@ -6,16 +6,17 @@ import Tooltip from "@material-ui/core/Tooltip";
 import CategoryCard from "../../components/categoryCard";
 
 import "./style.css";
+
 export default function Categories() {
   const categories = useSelector((state) => state.categories);
-  console.log(categories);
+  const selectedItem = useSelector((state) => state.selectedItem);
   return (
     <>
       {categories.length > 0 ? (
         <div className="page page-categories">
           <div className="categories-grid">
-            {categories.map((category) => (
-              <CategoryCard category={category} />
+            {categories.map((category, i) => (
+              <CategoryCard key={i} category={category} selectedItem={selectedItem} />
             ))}
           </div>
         </div>
