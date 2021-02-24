@@ -14,6 +14,22 @@
     color: var(--light);
 }
 
+/* Card Style */
+.card{
+    background-color: var(--lightGrey);
+    color:var(--light);
+    /* transition: 0.5s; */
+}
+
+.card:hover{
+    border:2px solid rgb(138, 138, 138);
+}
+
+.card-selected{
+    background-color: var(--light);
+
+}
+
 /* Common input */
 .common-input{
     background: transparent;
