@@ -10,6 +10,9 @@ const selectedItemReducer = (state = [], action) => {
       state = [action.payload];
       return state;
     }
+    case "ResetSelectedItem": {
+      return [];
+    }
 
     default:
       return state;

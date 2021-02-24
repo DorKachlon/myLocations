@@ -5,7 +5,7 @@ export const addLocation = (newLocation) => {
 
 //Read
 export const fetchLocations = () => {
-  return { type: "FetchCategories" };
+  return { type: "FetchLocation" };
 };
 
 //Update
