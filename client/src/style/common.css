@@ -38,6 +38,7 @@
     padding: 10px;
     transition: 0.5s;
     color: var(--light);
+    width: 100%;
 
 }
 .common-input:hover{

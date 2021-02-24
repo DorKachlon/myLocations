@@ -34,7 +34,8 @@ export default function AddLocations() {
       id: Date.now().toString(),
       name,
       address,
-      coordinates: { lng: coordinatesLng, lat: coordinatesLat },
+      coordinatesLng,
+      coordinatesLat,
       category: categoryArr,
     };
     try {
@@ -55,14 +56,12 @@ export default function AddLocations() {
             className="common-input"
             value={name}
             placeholder="Name of the location"
-            variant="outlined"
             onChange={(e) => setName(e.currentTarget.value)}
           />
           <input
             className="common-input"
             value={address}
             placeholder="Address"
-            variant="outlined"
             onChange={(e) => setAddress(e.currentTarget.value)}
           />
           <div className="add-location-coordinates">
@@ -70,14 +69,12 @@ export default function AddLocations() {
               className="common-input"
               value={coordinatesLng}
               placeholder="Coordinates lng"
-              variant="outlined"
               onChange={(e) => setCoordinatesLng(e.currentTarget.value)}
             />
             <input
               className="common-input"
               value={coordinatesLat}
               placeholder="Coordinates lat"
-              variant="outlined"
               onChange={(e) => setCoordinatesLat(e.currentTarget.value)}
             />
           </div>
