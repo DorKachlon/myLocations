@@ -1,3 +1,3 @@
 export function saveCategories(data) {
-  localStorage.setItem("myLocation-categories", JSON.stringify({ categories: data }));
+  localStorage.setItem("myLocations-categories", JSON.stringify({ categories: data }));
 }

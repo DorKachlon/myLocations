@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { grey } from "@material-ui/core/colors";
+import { useDispatch } from "react-redux";
+import { fetchCategories } from "./actions/categories";
+import { fetchLocations } from "./actions/locations";
 
 import Header from "./components/header";
 import Menu from "./components/menu";
@@ -25,6 +28,11 @@ const outerTheme = createMuiTheme({
 
 function App() {
   const [menuValue, setMenuValue] = useState(0);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchLocations());
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={outerTheme}>

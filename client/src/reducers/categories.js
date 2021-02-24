@@ -13,7 +13,9 @@ const categoriesReducer = (state = [], action) => {
     //Read
     case "FetchCategories": {
       const categoriesFromLocalStorage = localStorage.getItem("myLocations-categories");
-      return categoriesFromLocalStorage;
+      if (categoriesFromLocalStorage) {
+        return JSON.parse(categoriesFromLocalStorage).categories;
+      }
     }
 
     //Update

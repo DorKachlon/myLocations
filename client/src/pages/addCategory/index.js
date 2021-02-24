@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 import "./style.css";
 import Button from "@material-ui/core/Button";
-import FormControl from "@material-ui/core/FormControl";
-import TextField from "@material-ui/core/TextField";
 import { useDispatch } from "react-redux";
 import { addCategory } from "../../actions/categories";
 import { useHistory } from "react-router-dom";
 import categoryValidation from "../../validation/category";
 import ErrorOutlineOutlinedIcon from "@material-ui/icons/ErrorOutlineOutlined";
-import {
-  fade,
-  ThemeProvider,
-  withStyles,
-  makeStyles,
-  createMuiTheme,
-} from "@material-ui/core/styles";
 
 export default function AddCategory() {
   const [name, setName] = useState("");

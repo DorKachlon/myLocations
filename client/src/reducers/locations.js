@@ -13,7 +13,9 @@ const locationsReducer = (state = [], action) => {
     //Read
     case "FetchLocation": {
       const locationsFromLocalStorage = localStorage.getItem("myLocations-locations");
-      return locationsFromLocalStorage;
+      if (locationsFromLocalStorage) {
+        return JSON.parse(locationsFromLocalStorage).locations;
+      }
     }
 
     //Update
