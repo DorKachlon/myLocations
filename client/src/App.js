@@ -11,6 +11,8 @@ import Locations from "./pages/locations";
 import AddCategory from "./pages/addCategory";
 import AddLocation from "./pages/addLocation";
 
+import "./style/common.css";
+import "./style/color.css";
 import "./App.css";
 
 const outerTheme = createMuiTheme({
