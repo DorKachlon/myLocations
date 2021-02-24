@@ -38,7 +38,7 @@ export default function AddCategory() {
             onChange={(e) => setName(e.currentTarget.value)}
           />
           <Button variant="contained" type="submit">
-            Add category
+            Add Category
           </Button>
           {error && (
             <div className="error-message">

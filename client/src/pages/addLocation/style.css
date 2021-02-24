@@ -1,0 +1,20 @@
+.page-add-location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-location-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    min-height: 300px;
+    width: 50%;
+    min-width: 300px;
+}
+.add-location-coordinates{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
