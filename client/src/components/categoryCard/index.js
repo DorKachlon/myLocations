@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { setSelectedItem } from "../../actions/selectedItem";
 import "./style.css";
+import moment from "moment";
 
 export default function CategoryCard({ category, selectedItemBool }) {
   const dispatch = useDispatch();
@@ -12,7 +13,10 @@ export default function CategoryCard({ category, selectedItemBool }) {
 
   return (
     <>
-      <div className={selectedItemBool ? "card-selected" : "card"} onClick={clickHandler}>
+      <div
+        className={selectedItemBool ? "card-selected card-category" : "card card-category"}
+        onClick={clickHandler}
+      >
         {category.name}
       </div>
     </>
