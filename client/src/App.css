@@ -20,5 +20,6 @@ body{
     grid-area: page;
     overflow-y: auto;
     background-color: var(--grey3);
+    height: calc(100vh - 50px);
   }
   
