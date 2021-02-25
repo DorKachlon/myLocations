@@ -1,0 +1,26 @@
+body{
+  overflow: hidden;
+  background-color: var(--grey3);
+}
+.app-layout {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 50px 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "header header"
+      "menu page";
+  }
+  .header {
+    grid-area: header;
+  }
+  .menu {
+    grid-area: menu;
+  }
+  .page {
+    grid-area: page;
+    overflow-y: auto;
+    background-color: var(--grey3);
+    height: calc(100vh - 50px);
+  }
+  

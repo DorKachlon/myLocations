@@ -1,0 +1,28 @@
+.card-location{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.location-name{
+    font-size: 30px;
+}
+
+.location-category-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.location-single-category{
+    padding: 5px 15px;
+    color: black;
+    background-color: var(--light);
+    border-radius: 15px;
+    margin: 0px 5px;
+}
+
+.card-selected  .location-single-category{
+    color: var(--light);
+    background-color: black;
+}

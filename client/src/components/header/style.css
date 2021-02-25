@@ -1,0 +1,76 @@
+.icon-web svg {
+    font-size: 40px;
+    margin: 0px 35px;
+  }
+  .header {
+    background-color: var(--grey1);
+    display: flex;
+    align-items: center;
+    color: var(--light);
+    font-size: 10px;
+    height: 50px;
+  }
+  .user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .user > div {
+    width: 30px;
+    height: 30px;
+  }
+  .user > h2 {
+    margin: 0px 10px;
+  }
+  
+  .actions-button{
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .actions-button svg{
+    color:var(--light);
+    transition: 1.5s;
+  }
+
+  .actions-button > .info-button:hover  svg{
+    color:rgb(234, 255, 159);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+  .actions-button > .edit-button:hover  svg{
+    color:rgb(159, 193, 255);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+  
+  .actions-button > .delete-button:hover  svg{
+    color:rgb(255, 160, 160);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+
+  .actions-button > .add-button:hover  svg{
+    color:rgb(175, 255, 175);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
+  }
+
+  @keyframes dance{
+    0%{
+      transform: rotate(0deg);
+    }
+    25%{
+      transform: rotate(8deg);
+    }    
+    50%{
+      transform: rotate(0deg);
+    }    
+    75%{
+      transform: rotate(-8deg);
+    }
+    100%{
+      transform: rotate(0deg);
+    }
+  }

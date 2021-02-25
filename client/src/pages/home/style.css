@@ -1,0 +1,33 @@
+.page-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-title{
+    font-size: 60px;
+    margin: 20px;
+}
+
+.home-description{
+    font-size: 30px;
+    margin: 20px;
+}
+
+.point{
+    position: absolute;
+    bottom: 0;
+    animation:upDown 1s ease-in-out alternate  infinite ;
+}
+
+
+@keyframes upDown{
+    from{
+        bottom:0
+    }
+    to{
+        bottom:20px
+
+    }
+}

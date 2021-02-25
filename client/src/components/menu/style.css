@@ -1,0 +1,19 @@
+.menu {
+    height: calc(100vh - 50px);
+    width: 100px;
+    background-color: var(--grey1);
+  }
+  .menu > div {
+    padding-top: 30px;
+  }
+  .menu svg {
+    color: var(--light);
+    transition: 0.5s;
+  }
+  .menu a {
+    min-width: 10px !important;
+  }
+  .menu button:hover svg {
+    font-size: 28px;
+  }
+  

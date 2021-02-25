@@ -1,0 +1,15 @@
+.page-add-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-category-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+    min-height: 300px;
+    width: 50%;
+    min-width: 300px;
+}
