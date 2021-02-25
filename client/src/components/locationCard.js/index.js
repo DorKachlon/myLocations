@@ -10,15 +10,18 @@ export default function LocationCard({ location, selectedItemBool }) {
   };
   return (
     <>
-      <div className={selectedItemBool ? "card-selected" : "card"} onClick={clickHandler}>
-        <div className="location-name">name: {location.name}</div>
-        <div className="location-name">address: {location.address}</div>
-        <div className="location-name">
+      <div
+        className={selectedItemBool ? "card-selected card-location" : "card card-location"}
+        onClick={clickHandler}
+      >
+        <div className="location-name">{location.name}</div>
+        <div className="location-address">address: {location.address}</div>
+        <div className="location-coordinates">
           coordinates: {location.coordinatesLng} | {location.coordinatesLat}
         </div>
         <div className="location-category-container">
           {location.category.map((singleCategories, i) => (
-            <div key={i} className="location-category">
+            <div key={i} className="location-single-category">
               {singleCategories}
             </div>
           ))}
