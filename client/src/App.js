@@ -4,6 +4,7 @@ import { grey } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useDispatch } from "react-redux";
 import { fetchCategories } from "./actions/categories";
 import { fetchLocations } from "./actions/locations";
@@ -42,14 +43,22 @@ function App() {
         <Router>
           <Header />
           <Menu />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/categories" component={Categories} />
-            <Route path="/categories/:id" component={SingleCategory} />
-            <Route exact path="/locations" component={Locations} />
-            <Route exact path="/add-category" component={AddCategory} />
-            <Route exact path="/add-location" component={AddLocation} />
-          </Switch>
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition key={location.key} timeout={500} classNames="fade">
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/categories" component={Categories} />
+                    <Route path="/categories/:id" component={SingleCategory} />
+                    <Route exact path="/locations" component={Locations} />
+                    <Route exact path="/add-category" component={AddCategory} />
+                    <Route exact path="/add-location" component={AddLocation} />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
         </Router>
       </div>
     </ThemeProvider>

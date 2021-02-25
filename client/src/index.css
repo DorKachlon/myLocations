@@ -19,3 +19,23 @@ a{
   background-color: white; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
 }
+
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+
+  transition: opacity 150ms linear;
+}

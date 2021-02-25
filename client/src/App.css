@@ -1,5 +1,6 @@
 body{
   overflow: hidden;
+  background-color: var(--grey3);
 }
 .app-layout {
     display: grid;
