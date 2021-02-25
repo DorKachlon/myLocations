@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Tooltip from "@material-ui/core/Tooltip";
 import MapIcon from "@material-ui/icons/Map";
 import ListIcon from "@material-ui/icons/List";
+import HomeIcon from "@material-ui/icons/Home";
 
 import { useLocation, Link } from "react-router-dom";
 
@@ -18,6 +19,7 @@ const useStyle = makeStyles({
   },
 });
 const links = [
+  { title: "Home", to: "/", component: <HomeIcon /> },
   { title: "Category", to: "/categories", component: <ListIcon /> },
   { title: "Location", to: "/locations", component: <MapIcon /> },
 ];
@@ -30,19 +32,21 @@ export default function Menu() {
   useEffect(() => {
     switch (location.pathname) {
       case "/add-location":
-        setMenuValue(1);
+        setMenuValue(2);
         break;
       case "/locations":
-        setMenuValue(1);
+        setMenuValue(2);
         break;
       case "/add-category":
-        setMenuValue(0);
+        setMenuValue(1);
         break;
       case "/categories":
+        setMenuValue(1);
+        break;
+      case "/":
         setMenuValue(0);
         break;
       default:
-        setMenuValue(0);
         break;
     }
   }, [location.pathname]);
