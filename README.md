@@ -17,6 +17,7 @@
 - yup
 
 ## DEMO
+https://my-locations.vercel.app/
 
 ## Sample Application Description
 
