@@ -1,13 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setSelectedItem } from "../../actions/selectedItem";
-
 import "./style.css";
+
 export default function LocationCard({ location, selectedItemBool }) {
   const dispatch = useDispatch();
+
   const clickHandler = () => {
     dispatch(setSelectedItem({ ...location, type: "location" }));
   };
+
   return (
     <>
       <div

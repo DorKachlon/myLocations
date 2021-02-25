@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Clock from "./clock";
+import { useLocation, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
 import ExploreIcon from "@material-ui/icons/Explore";
-import { Link } from "react-router-dom";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
 import Tooltip from "@material-ui/core/Tooltip";
-import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+
 import { removeCategory } from "../../actions/categories";
 import { removeLocation } from "../../actions/locations";
 import MyModal from "../modalEdit";
+import Clock from "./clock";
 import "./style.css";
 
 export default function Header() {
@@ -22,9 +22,9 @@ export default function Header() {
   const [showButtons, setShowButtons] = useState();
   const [openModal, setOpenModal] = useState(false);
 
+  const selectedItem = useSelector((state) => state.selectedItem);
   const location = useLocation();
   const dispatch = useDispatch();
-  const selectedItem = useSelector((state) => state.selectedItem);
 
   useEffect(() => {
     switch (location.pathname) {

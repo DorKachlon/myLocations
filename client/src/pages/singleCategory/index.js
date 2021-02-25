@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
+
 import LocationCard from "../../components/locationCard.js";
+import "./style.css";
 
 export default function SingleCategory() {
   const [currentCategory, setCurrentCategory] = useState();
   const [currentLocations, setCurrentLocations] = useState();
-  console.log(currentCategory);
-  console.log(currentLocations);
 
   const location = useLocation();
   const categories = useSelector((state) => state.categories);
@@ -25,7 +24,8 @@ export default function SingleCategory() {
     setCurrentLocations(
       locations.filter((location) => location.category.includes(currentCategoryHelper.name))
     );
-  }, [categories, locations]);
+  }, [categories, locations, location.pathname]);
+
   return (
     <>
       <div className="page page-single-category">
@@ -45,20 +45,18 @@ export default function SingleCategory() {
                 ))}
               </div>
             ) : (
-              <>
-                <div className="empty-section empty-section-single-category">
-                  <h2 className="title">
-                    No locations for this category yet.
-                    <br />
-                    Click here to add your first Location :
-                  </h2>
-                  <Link to="/add-location">
-                    <Tooltip title="Add a Location">
-                      <Button variant="contained">add a Location</Button>
-                    </Tooltip>
-                  </Link>
-                </div>
-              </>
+              <div className="empty-section empty-section-single-category">
+                <h2 className="title">
+                  No locations for this category yet.
+                  <br />
+                  Click here to add your first Location :
+                </h2>
+                <Link to="/add-location">
+                  <Tooltip title="Add a Location">
+                    <Button variant="contained">add a Location</Button>
+                  </Tooltip>
+                </Link>
+              </div>
             )}
           </>
         )}

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { grey } from "@material-ui/core/colors";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchCategories } from "./actions/categories";
 import { fetchLocations } from "./actions/locations";

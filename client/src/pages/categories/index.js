@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
-import CategoryCard from "../../components/categoryCard";
-import { useDispatch } from "react-redux";
-import { resetSelectedItem } from "../../actions/selectedItem";
 
+import CategoryCard from "../../components/categoryCard";
+import { resetSelectedItem } from "../../actions/selectedItem";
 import "./style.css";
 
 export default function Categories() {
@@ -19,6 +19,7 @@ export default function Categories() {
       dispatch(resetSelectedItem());
     };
   }, []);
+
   return (
     <>
       {categories.length > 0 ? (

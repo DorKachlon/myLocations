@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { setSelectedItem } from "../../actions/selectedItem";
 import "./style.css";
-import moment from "moment";
 
 export default function CategoryCard({ category, selectedItemBool }) {
   const dispatch = useDispatch();

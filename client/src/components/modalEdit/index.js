@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import Select from "react-select";
 import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
 import ErrorOutlineOutlinedIcon from "@material-ui/icons/ErrorOutlineOutlined";
-import Select from "react-select";
 
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import { updateCategory } from "../../actions/categories";
 import { updateLocation } from "../../actions/locations";
 
@@ -23,6 +23,7 @@ export default function MyModal({ open, setOpen, data }) {
   const [coordinatesLat, setCoordinatesLat] = useState("");
   const [category, setCategory] = useState();
   const [error, setError] = useState("");
+
   const [modalStyle] = useState(getModalStyle);
   const categories = useSelector((state) => state.categories);
   const dispatch = useDispatch();

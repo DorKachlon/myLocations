@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
+
 import LocationCard from "../../components/locationCard.js";
-import { useDispatch } from "react-redux";
 import { resetSelectedItem } from "../../actions/selectedItem";
 import "./style.css";
+
 export default function Locations() {
   const locations = useSelector((state) => state.locations);
   const selectedItem = useSelector((state) => state.selectedItem);
@@ -17,6 +19,7 @@ export default function Locations() {
       dispatch(resetSelectedItem());
     };
   }, []);
+
   return (
     <>
       {locations.length > 0 ? (

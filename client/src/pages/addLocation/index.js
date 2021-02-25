@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "./style.css";
-import { useSelector } from "react-redux";
-import Select from "react-select";
-import ErrorOutlineOutlinedIcon from "@material-ui/icons/ErrorOutlineOutlined";
-import Button from "@material-ui/core/Button";
-import { useDispatch } from "react-redux";
-import { addLocation } from "../../actions/locations";
 import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import Select from "react-select";
+import Button from "@material-ui/core/Button";
+import ErrorOutlineOutlinedIcon from "@material-ui/icons/ErrorOutlineOutlined";
+
+import { addLocation } from "../../actions/locations";
 import locationValidation from "../../validation/location";
+import "./style.css";
 
 export default function AddLocations() {
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ export default function AddLocations() {
   const [coordinatesLat, setCoordinatesLat] = useState("");
   const [category, setCategory] = useState();
   const [error, setError] = useState("");
+
   const dispatch = useDispatch();
   const history = useHistory();
 

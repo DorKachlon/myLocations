@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+
+import { makeStyles } from "@material-ui/core";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Tooltip from "@material-ui/core/Tooltip";
-import { makeStyles } from "@material-ui/core";
-
 import MapIcon from "@material-ui/icons/Map";
 import ListIcon from "@material-ui/icons/List";
-import { useLocation } from "react-router-dom";
 
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+
 import "./style.css";
 
 const useStyle = makeStyles({
@@ -23,6 +23,7 @@ const links = [
 ];
 
 export default function Menu() {
+  const classes = useStyle();
   const [menuValue, setMenuValue] = useState(0);
   const location = useLocation();
 
@@ -44,9 +45,7 @@ export default function Menu() {
         setMenuValue(0);
         break;
     }
-  }, []);
-
-  const classes = useStyle();
+  }, [location.pathname]);
 
   const handleChange = (event, newValue) => {
     setMenuValue(newValue);
