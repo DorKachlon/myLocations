@@ -10,6 +10,7 @@ import { fetchLocations } from "./actions/locations";
 
 import Header from "./components/header";
 import Menu from "./components/menu";
+import Home from "./pages/home";
 import Categories from "./pages/categories";
 import Locations from "./pages/locations";
 import AddCategory from "./pages/addCategory";
@@ -42,6 +43,7 @@ function App() {
           <Header />
           <Menu />
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/categories" component={Categories} />
             <Route path="/categories/:id" component={SingleCategory} />
             <Route exact path="/locations" component={Locations} />
