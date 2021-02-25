@@ -51,6 +51,7 @@ export default function Header() {
       default:
         setLocationsOrCategories("");
         setTitle("");
+        setShowButtons(false);
         break;
     }
   }, [location]);
