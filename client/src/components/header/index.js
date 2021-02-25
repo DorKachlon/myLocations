@@ -50,6 +50,7 @@ export default function Header() {
         break;
       default:
         setLocationsOrCategories("");
+        setTitle("");
         break;
     }
   }, [location]);
@@ -67,9 +68,9 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div className="icon-web">
+      <Link className="icon-web" to="/">
         <ExploreIcon />
-      </div>
+      </Link>
       <h1>{title}</h1>
       <Clock />
       <div className="actions-button">
