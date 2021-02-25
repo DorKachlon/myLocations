@@ -28,14 +28,16 @@
     margin-left: auto;
     margin-right: 10px;
   }
-  .actions-button {
-    margin-left: auto;
-    margin-right: 10px;
-  }
 
   .actions-button svg{
     color:var(--light);
     transition: 1.5s;
+  }
+
+  .actions-button > .info-button:hover  svg{
+    color:rgb(234, 255, 159);
+    transform: scale(1.1);
+    animation : dance 0.5s ease-in-out  alternate backwards    ; 
   }
   .actions-button > .edit-button:hover  svg{
     color:rgb(159, 193, 255);

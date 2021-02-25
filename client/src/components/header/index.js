@@ -6,6 +6,7 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
+import InfoIcon from "@material-ui/icons/Info";
 import Tooltip from "@material-ui/core/Tooltip";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -23,7 +24,6 @@ export default function Header() {
 
   const location = useLocation();
   const dispatch = useDispatch();
-
   const selectedItem = useSelector((state) => state.selectedItem);
 
   useEffect(() => {
@@ -73,6 +73,17 @@ export default function Header() {
       <h1>{title}</h1>
       <Clock />
       <div className="actions-button">
+        {selectedItem[0]?.type === "category" && (
+          <Tooltip title="Info about category" placement="bottom">
+            <IconButton
+              className="info-button"
+              component={Link}
+              to={`/categories/${selectedItem[0].id}`}
+            >
+              <InfoIcon />
+            </IconButton>
+          </Tooltip>
+        )}
         {selectedItem[0] && (
           <>
             <Tooltip title="Edit" placement="bottom">
