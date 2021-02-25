@@ -18,7 +18,7 @@
 .card{
     background-color: var(--lightGrey);
     color:var(--light);
-    /* transition: 0.5s; */
+    cursor: pointer;
 }
 
 .card:hover{
@@ -27,7 +27,7 @@
 
 .card-selected{
     background-color: var(--light);
-
+    cursor: pointer;
 }
 
 /* Common input */
